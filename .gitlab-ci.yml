@@ -8,6 +8,8 @@ sync-tags:       # This job runs in the build stage, which runs first.
     - ls -alh
     - git remote remove cloud
     - git remote add cloud "https://$CLOUD_REPO_USERNAME:$CLOUD_REPO_PASSWORD@$CLOUD_REPO_URL"
+    - # git remote remove origin
+    - echo "CI_PROJECT_URL"
     - git remote -v
     - git ls-remote --tags cloud
     - git fetch cloud --tags
