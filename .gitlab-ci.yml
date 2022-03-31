@@ -3,6 +3,8 @@ stages:          # List of stages for jobs, and their order of execution
 
 sync-tags:       # This job runs in the build stage, which runs first.
   stage: sync
+  only: 
+    - schedules
   script:
     - echo "Running"
     - ls -alh
