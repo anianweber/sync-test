@@ -10,6 +10,8 @@ sync-tags:       # This job runs in the build stage, which runs first.
     - git remote add cloud "https://$CLOUD_REPO_USERNAME:$CLOUD_REPO_PASSWORD@$CLOUD_REPO_URL"
     - echo "$CI_PROJECT_URL"
     - echo "$CI_REPOSITORY_URL"
+    - needle=https://
+    - echo "${CI_PROJECT_URL/"$needle"/""}" 
     - git remote -v
     - git ls-remote --tags cloud
     - git fetch cloud --tags
