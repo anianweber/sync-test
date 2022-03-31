@@ -1,0 +1,9 @@
+stages:          # List of stages for jobs, and their order of execution
+  - sync
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: sync
+  script:
+    - echo "Running"
+    - ls -alh
+
