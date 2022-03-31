@@ -3,11 +3,9 @@ stages:          # List of stages for jobs, and their order of execution
 
 sync-tags:       # This job runs in the build stage, which runs first.
   stage: sync
-  only: 
-    - schedules
+
   script:
-    - echo "Running"
-    - ls -alh
+    - echo "$CI_PIPELINE_SOURCE"
     - git remote remove cloud
     - git remote add cloud "https://$CLOUD_REPO_USERNAME:$CLOUD_REPO_PASSWORD@$CLOUD_REPO_URL"
     - needle=https://
