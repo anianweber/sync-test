@@ -11,4 +11,4 @@ sync-tags:       # This job runs in the build stage, which runs first.
     - git remote -v
     - git ls-remote --tags cloud
     - git fetch cloud --tags
-    - git push cloud --tags
+    - git push origin --tags
